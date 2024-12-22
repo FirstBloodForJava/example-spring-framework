@@ -1,10 +1,13 @@
 package com.example.event;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.context.ApplicationListener;
 
 public class CustomApplicationListener implements ApplicationListener<CustomEvent> {
+    private static Log log = LogFactory.getLog(CustomApplicationListener.class);
     public CustomApplicationListener () {
-
+        log.info("CustomApplicationListener");
     }
     @Override
     public void onApplicationEvent(CustomEvent event) {
