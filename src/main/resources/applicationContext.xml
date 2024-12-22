@@ -9,6 +9,7 @@
     </bean>
 
     <bean id="customApplicationListener" class="com.example.event.CustomApplicationListener">
+        <property name="pwd" value="#{systemProperties['user.dir']}"/>
     </bean>
 
 
