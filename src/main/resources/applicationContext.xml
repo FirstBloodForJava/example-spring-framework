@@ -5,8 +5,10 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="redisService" class="com.example.service.RedisService">
+        <property name="customApplicationListener" ref="customApplicationListener"/>
+    </bean>
 
-
+    <bean id="customApplicationListener" class="com.example.event.CustomApplicationListener">
     </bean>
 
 
