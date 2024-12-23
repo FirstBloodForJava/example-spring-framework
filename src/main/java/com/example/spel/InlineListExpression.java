@@ -24,5 +24,8 @@ public class InlineListExpression {
         List listList = (List) parser.parseExpression("{{'a', 'b'}, {'c', 'd', 'e'}}").getValue(readContext);
         // [a, b]
         System.out.println(listList.get(0));
+
+        List empty = (List) parser.parseExpression("{}").getValue(readContext);
+        System.out.println(empty.isEmpty());
     }
 }
