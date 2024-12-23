@@ -39,7 +39,7 @@ public class PropertiesExpression {
         officers.put("xiaomi", xiaomi);
 
         // 创建一个只读的context
-        EvaluationContext context = SimpleEvaluationContext.forReadOnlyDataBinding().build();
+        EvaluationContext readContext = SimpleEvaluationContext.forReadOnlyDataBinding().build();
 
         SpelExpressionParser parser = new SpelExpressionParser();
 
@@ -56,23 +56,28 @@ public class PropertiesExpression {
 
         // Su7 Ultra
         System.out.println(parser.parseExpression("students[2]").getValue(
-                context, tesla, String.class));
+                readContext, tesla, String.class));
 
         // Model 3
         System.out.println(parser.parseExpression("students[2]").getValue(
-                context, xiaomi, String.class));
+                readContext, xiaomi, String.class));
 
         // China
-        System.out.println(parser.parseExpression("teachers[0].city").getValue(context, tesla, String.class));
+        System.out.println(parser.parseExpression("teachers[0].city").getValue(readContext, tesla, String.class));
         // beijing2
-        System.out.println(parser.parseExpression("teachers[1].country").getValue(context, xiaomi, String.class));
+        System.out.println(parser.parseExpression("teachers[1].country").getValue(readContext, xiaomi, String.class));
 
         // -- 访问map元素 com.example.spel.ClassInfo
-        System.out.println(parser.parseExpression("officers['xiaomi']").getValue(context, school, ClassInfo.class));
+        System.out.println(parser.parseExpression("officers['xiaomi']").getValue(readContext, school, ClassInfo.class));
 
         // beijing1
-        System.out.println(parser.parseExpression("officers['xiaomi'].teachers[0].country").getValue(context, school, String.class));
+        System.out.println(parser.parseExpression("officers['xiaomi'].teachers[0].country").getValue(readContext, school, String.class));
 
+        // -- 方法调用 去掉
+        // true
+        System.out.println(parser.parseExpression("isMember('xiaomi')").getValue(school, Boolean.class));
 
+        // country
+        System.out.println(parser.parseExpression("'my country'.substring(3)").getValue(String.class));
     }
 }
