@@ -1,15 +1,15 @@
 package com.example.spel;
 
-public class PlaceOfBirth {
+public class Teacher {
 
     private String city;
     private String country;
 
-    public PlaceOfBirth(String city) {
+    public Teacher(String city) {
         this.city=city;
     }
 
-    public PlaceOfBirth(String city, String country) {
+    public Teacher(String city, String country) {
         this(city);
         this.country = country;
     }
