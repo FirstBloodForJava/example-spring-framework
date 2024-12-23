@@ -16,6 +16,14 @@ public class School {
         return members;
     }
 
+    public void setMember(ClassInfo member) {
+        members.add(member);
+    }
+
+    public void setMembers(List<ClassInfo> members) {
+        members.addAll(members);
+    }
+
     public Map getOfficers() {
         return officers;
     }

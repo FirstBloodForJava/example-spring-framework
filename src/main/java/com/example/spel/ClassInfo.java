@@ -20,9 +20,10 @@ public class ClassInfo {
         this.birthdate = c.getTime();
     }
 
-    public ClassInfo(String name, String addr, String[] students) {
+    public ClassInfo(String name, String addr,Date birthdate, String[] students) {
         this.name = name;
         this.addr = addr;
+        this.birthdate = birthdate;
         this.students = students;
     }
 
