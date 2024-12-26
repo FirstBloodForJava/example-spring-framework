@@ -1,5 +1,7 @@
 package com.example.proxy.statics;
 
+import com.example.proxy.People;
+
 /**
  * @author ouyangcm
  * create 2024/12/26 14:39

@@ -1,4 +1,4 @@
-package com.example.proxy.statics;
+package com.example.proxy;
 
 public interface People {
 
