@@ -6,6 +6,9 @@ package com.example.proxy.cglib;
  */
 public class AmericanPeople {
 
+    public AmericanPeople() {
+        System.out.println("AmericanPeople 无参构造");
+    }
     public void say (String msg){
         System.out.println(msg);
     }
