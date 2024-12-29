@@ -9,7 +9,7 @@ import org.springframework.context.ApplicationEventPublisherAware;
 import org.springframework.context.weaving.LoadTimeWeaverAware;
 import org.springframework.instrument.classloading.LoadTimeWeaver;
 
-public class RedisService implements ApplicationEventPublisherAware, LoadTimeWeaverAware {
+public class RedisService implements ApplicationEventPublisherAware, LoadTimeWeaverAware, RedisServiceInterface {
 
     private static Log log = LogFactory.getLog(CustomApplicationListener.class);
     private ApplicationEventPublisher publisher;
